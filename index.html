@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Código Prático | Soluções de Automação e Sistemas</title>
+
+    <script>
+        if (
+            localStorage.getItem('theme') == 'dark' ||
+            (!localStorage.getItem('theme') && window.matchMedia("(prefers-color-scheme: dark)").matches)
+        ) {
+            document.documentElement.classList.add('dark');
+        }
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class"
+        }
+    </script>
+</head>
+
+<body
+    class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300 font-sans antialiased min-h-screen flex flex-col">
+
+    <header
+        class="sticky top-0 z-50 backdrop-blur-md bg-white/80 dark:bg-gray-900/80 border-b border-gray-200 dark:border-gray-800 transition-colors duration-300">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+
+            <div class="flex items-center gap-3">
+                <div class="flex flex-col">
+                    <span
+                        class="text-base font-black tracking-tight leading-none text-gray-900 dark:text-white">Cervo<span
+                            class="text-blue-600 dark:text-blue-400">Digital</span></span>
+                    <span class="text-[10px] text-gray-500 dark:text-gray-400 font-mono">by CódigoPrático</span>
+                </div>
+            </div>
+
+            <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
+                <a href="#artigos" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Todos os
+                    Artigos</a>
+                <a href="#automacao" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Automação &
+                    Bots</a>
+                <a href="#sistemas" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Sistemas
+                    Web</a>
+                <a href="#sobre" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Sobre a
+                    Agencia</a>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <button id="theme-toggle"
+                    class="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all border border-gray-200 dark:border-gray-700"
+                    aria-label="Alternar tema">
+                    <span id="theme-icon">🌙</span>
+                </button>
+
+                <a href="https://youtube.com" target="_blank"
+                    class="hidden sm:inline-flex px-4 py-2 text-xs font-semibold text-white bg-red-600 hover:bg-red-700 rounded-lg shadow-sm transition-all items-center gap-2">
+                    <span>Ver no YouTube</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section
+        class="border-b border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/50 py-12 transition-colors duration-300">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="max-w-3xl space-y-4">
+                <div
+                    class="inline-flex items-center gap-2 px-3 py-1 text-xs font-semibold text-blue-700 bg-blue-100 dark:text-blue-300 dark:bg-blue-900/50 rounded-full">
+                    <span>📝 Engenharia de Software & Soluções Reais</span>
+                </div>
+                <h1 class="text-3xl md:text-5xl font-black tracking-tight leading-tight">
+                    Bastidores de desenvolvimento, automações e arquitetura web sem enrolação.
+                </h1>
+                <p class="text-base md:text-lg text-gray-600 dark:text-gray-400">
+                    O blog técnico da <strong>Cervo Digital</strong>. Artigos práticos extraídos de projetos reais e
+                    soluções desenvolvidas no canal <strong>CódigoPrático</strong>.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <main class="max-w-6xl mx-auto px-6 py-12 flex-1 space-y-12">
+
+        <section>
+            <h2 class="text-xs font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400 mb-4">Destaque da
+                Semana</h2>
+            <article
+                class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 grid md:grid-cols-12">
+                <div class="md:col-span-7 p-8 flex flex-col justify-between space-y-6">
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-3 text-xs text-gray-500 dark:text-gray-400">
+                            <span
+                                class="px-2.5 py-1 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 font-semibold rounded-md">Automação</span>
+                            <span>•</span>
+                            <time datetime="2026-05-10">10 de Maio, 2026</time>
+                            <span>•</span>
+                            <span>Leitura de 6 min</span>
+                        </div>
+                        <h3
+                            class="text-2xl md:text-3xl font-bold hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                            Como construir um Bot de Atendimento para Clínicas e Petshops sem depender de plataformas
+                            caras
+                        </h3>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+                            Análise arquitetural de um bot WhatsApp multisseção com controle de transações, prevenção de
+                            bloqueio e integração direta com sistemas locais de agendamento.
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-4 pt-4 border-t border-gray-100 dark:border-gray-700/50">
+                        <div
+                            class="w-10 h-10 rounded-full bg-blue-600 text-white font-bold flex items-center justify-center text-sm">
+                            CD</div>
+                        <div>
+                            <p class="text-sm font-semibold">Equipe Cervo Digital</p>
+                            <p class="text-xs text-gray-500 dark:text-gray-400">Desenvolvimento & Infraestrutura</p>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="md:col-span-5 bg-gray-100 dark:bg-gray-900 p-6 flex flex-col justify-center border-t md:border-t-0 md:border-l border-gray-200 dark:border-gray-700 font-mono text-xs text-gray-700 dark:text-gray-300">
+                    <div class="flex items-center gap-2 border-b border-gray-200 dark:border-gray-800 pb-3 mb-3">
+                        <span class="w-2.5 h-2.5 rounded-full bg-red-500"></span>
+                        <span class="w-2.5 h-2.5 rounded-full bg-yellow-500"></span>
+                        <span class="w-2.5 h-2.5 rounded-full bg-green-500"></span>
+                        <span class="text-gray-400 ml-2">bot-flow.js</span>
+                    </div>
+                    <p class="text-purple-600 dark:text-purple-400">const <span
+                            class="text-blue-600 dark:text-blue-300">botSession</span> = new WhatsAppBot({</p>
+                    <p class="pl-4">autoReply: <span class="text-green-600 dark:text-green-400">true</span>,</p>
+                    <p class="pl-4">webhooks: [<span
+                            class="text-green-600 dark:text-green-400">'https://api.cervodigital.com/crm'</span>],</p>
+                    <p class="pl-4">antiBanRules: { maxMessagesPerMinute: <span class="text-orange-500">12</span> }</p>
+                    <p class="text-purple-600 dark:text-purple-400">});</p>
+                </div>
+            </article>
+        </section>
+
+        <section id="artigos" class="space-y-6">
+            <div class="flex items-center justify-between border-b border-gray-200 dark:border-gray-800 pb-4">
+                <h2 class="text-xl font-bold">Artigos Recentes</h2>
+                <div class="flex gap-2 text-xs font-medium">
+                    <button class="px-3 py-1.5 rounded-lg bg-blue-600 text-white">Todos</button>
+                    <button
+                        class="px-3 py-1.5 rounded-lg bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors">Frontend</button>
+                    <button
+                        class="px-3 py-1.5 rounded-lg bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors">Backend
+                        & APIs</button>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+
+                <article
+                    class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6 flex flex-col justify-between space-y-4 hover:border-blue-500 dark:hover:border-blue-500 transition-all shadow-sm">
+                    <div class="space-y-3">
+                        <span
+                            class="px-2 py-0.5 text-xs font-semibold bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-300 rounded">Pagamentos</span>
+                        <h3
+                            class="text-lg font-bold leading-snug hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                            Integração de PIX Transparente no Frontend usando JavaScript Puro
+                        </h3>
+                        <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
+                            Como gerar QR Code estático e dinâmico via API, tratando confirmação de pagamento em tempo
+                            real via WebSockets.
+                        </p>
+                    </div>
+                    <div
+                        class="pt-4 border-t border-gray-100 dark:border-gray-700/50 flex items-center justify-between text-xs text-gray-500 dark:text-gray-400">
+                        <span>02 de Maio, 2026</span>
+                        <span>4 min leitura</span>
+                    </div>
+                </article>
+
+                <article
+                    class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6 flex flex-col justify-between space-y-4 hover:border-blue-500 dark:hover:border-blue-500 transition-all shadow-sm">
+                    <div class="space-y-3">
+                        <span
+                            class="px-2 py-0.5 text-xs font-semibold bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded">Performance</span>
+                        <h3
+                            class="text-lg font-bold leading-snug hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                            Modo Escuro sem FOUC: A Estratégia do Script Crítico no Head
+                        </h3>
+                        <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
+                            Por que sua tela pisca ao recarregar a página e como resolver isso com 10 linhas de JS
+                            executadas antes do DOM Render.
+                        </p>
+                    </div>
+                    <div
+                        class="pt-4 border-t border-gray-100 dark:border-gray-700/50 flex items-center justify-between text-xs text-gray-500 dark:text-gray-400">
+                        <span>28 de Abril, 2026</span>
+                        <span>3 min leitura</span>
+                    </div>
+                </article>
+
+                <article
+                    class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6 flex flex-col justify-between space-y-4 hover:border-blue-500 dark:hover:border-blue-500 transition-all shadow-sm">
+                    <div class="space-y-3">
+                        <span
+                            class="px-2 py-0.5 text-xs font-semibold bg-amber-100 dark:bg-amber-900/40 text-amber-700 dark:text-amber-300 rounded">Arquitetura</span>
+                        <h3
+                            class="text-lg font-bold leading-snug hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                            Estruturando Sistemas Web para Empresas Locais: Menos Custo, Mais Entrega
+                        </h3>
+                        <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
+                            As decisões técnicas por trás das soluções da Cervo Digital para otimizar tempo de
+                            carregamento e custo de hospedagem.
+                        </p>
+                    </div>
+                    <div
+                        class="pt-4 border-t border-gray-100 dark:border-gray-700/50 flex items-center justify-between text-xs text-gray-500 dark:text-gray-400">
+                        <span>15 de Abril, 2026</span>
+                        <span>5 min leitura</span>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <section id="sobre"
+            class="bg-gradient-to-r from-blue-900 to-gray-900 text-white rounded-2xl p-8 md:p-12 shadow-xl">
+            <div class="max-w-2xl space-y-4">
+                <span class="text-xs font-bold uppercase tracking-wider text-blue-400">Cervo Digital &
+                    CódigoPrático</span>
+                <h2 class="text-2xl md:text-3xl font-bold">Desenvolvimento focado na resolução de problemas reais</h2>
+                <p class="text-gray-300 text-sm leading-relaxed">
+                    Projetamos ecossistemas web, integrações de pagamento e automações operacionais com foco na
+                    eficiência técnica. Acompanhe os artigos ou assista às implementações em vídeo no canal.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer
+        class="border-t border-gray-200 dark:border-gray-800 py-8 bg-white dark:bg-gray-900 transition-colors duration-300">
+        <div
+            class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-gray-500 dark:text-gray-400">
+            <div class="flex items-center gap-2">
+                <span>© 2026 Cervo Digital. Conteúdo técnico associado ao CódigoPrático.</span>
+            </div>
+            <div class="flex gap-6 font-medium">
+                <a href="#" class="hover:text-gray-900 dark:hover:text-white transition-colors">YouTube</a>
+                <a href="#" class="hover:text-gray-900 dark:hover:text-white transition-colors">GitHub</a>
+                <a href="#" class="hover:text-gray-900 dark:hover:text-white transition-colors">Contato</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
